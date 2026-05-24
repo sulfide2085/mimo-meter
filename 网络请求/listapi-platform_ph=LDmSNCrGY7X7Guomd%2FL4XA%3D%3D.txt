@@ -1,0 +1,22 @@
+curl 'https://platform.xiaomimimo.com/api/v1/usage/token-plan/list?api-platform_ph=LDmSNCrGY7X7Guomd%2FL4XA%3D%3D' \
+  -H 'accept: */*' \
+  -H 'accept-language: zh' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -b 'serviceToken="/Qzv9hyEQZikhu2h7j2kvEkkph6LXG/atClf1mWqbiePIPqp4zGQt0/gXzzSjvAnOotI/PbyZVjlV/up5oJR50ss0pu0rt0VLsHoDREpdsMH/cL9jNbXlQ/ZP8LjFiAhmf9AKWkMWcTTmGtT3qFHaf0qgy5j8gmj9aCKn36aXiy/9kH2asFnGTEU9OwYrO/KMR+jaR9WtyOBwix8WBJOhmZC4r4D/ELcV0gHFtmIIoLIVb9A1vPrIVAhh9Pgw+aba/GqU6P/7M7Yll99ZYkX0QQGrsTGwwAznDo5WjqsOjbGWpZY4Tc0My3RLHevGmOfobEkLRjRM9CV//yzV/IvhkzDzFGOA6UTNxOc7e/f/Aw="; xiaomichatbot_ph="mfK3PuH1z7h3/AOyNn5yyQ=="; api-platform_serviceToken="yVHEDQlNiFT1WavLtPFne5Kz8MHXzAonizSE/yu/WM5b/qIouSX89G56RXT2/Hd7/4Uxw79RxK29aYHzzG+xxAi9TGqoha3te6iSlfN1C/GZuDT8wzZlU8XCnbhJi6Z+VzaLg301CxW8bgidvzFVb+2Ze5o46bz8DdXmW6SvpkikAlXkf1aQIkW3ism81OgG3noze/By1HLPYuP97M4BhBxZCqln5kCYoQ2YPBBGZ9otIgT8MeyfxsRlduGuNJEvtNSfB10etH9jQw9GElmJHqeLFWmeUSH+gG8HiGTs68qqCArhxQvcDx84737qtIHdd8apn6HqzvJAe0IB7DQJwuWslKPoy/eLBu+4TNew4yI="; userId=3214228376; api-platform_slh="nj5LKviAvqSTUPlqkO71zO7byYQ="; api-platform_ph="LDmSNCrGY7X7Guomd/L4XA=="; cookie-preferences=%7B%22analytical%22%3Afalse%2C%22functional%22%3Afalse%7D' \
+  -H 'dnt: 1' \
+  -H 'origin: https://platform.xiaomimimo.com' \
+  -H 'pragma: no-cache' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://platform.xiaomimimo.com/console/plan-manage' \
+  -H 'sec-ch-ua: "Chromium";v="148", "Google Chrome";v="148", "Not/A)Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36' \
+  -H 'x-timezone: Etc/GMT-8' \
+  --data-raw '{"year":2026,"month":5}'
+
+{"code":0,"message":"","data":[{"date":"2026-05-23","model":"mimo-v2.5","totalToken":16434580,"inputHitToken":15799040,"inputMissToken":563428,"outputToken":72112,"requestCount":274},{"date":"2026-05-23","model":"mimo-v2.5-pro","totalToken":907230,"inputHitToken":694848,"inputMissToken":198032,"outputToken":14350,"requestCount":22}]}

@@ -1,0 +1,15 @@
+# Sensitive
+cookie.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Node
+node_modules/
+
+# Wrangler
+.worker/
+dist/
+worker/.wrangler/

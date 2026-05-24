@@ -1,0 +1,8 @@
+name = "mimo-meter"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+workers_dev = true
+preview_urls = false
+
+[vars]
+# MIMO_COOKIES should be set via: wrangler secret put MIMO_COOKIES

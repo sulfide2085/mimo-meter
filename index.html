@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mimo Meter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Mimo Meter</h1>
+    <p class="subtitle">Token 用量仪表盘</p>
+  </header>
+
+  <div id="loading" class="loading">加载中...</div>
+  <div id="error" class="error" hidden></div>
+
+  <div id="content" hidden>
+    <!-- 套餐信息 -->
+    <section class="card">
+      <h2>套餐信息</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="label">套餐</span>
+          <span id="plan-name" class="value">-</span>
+        </div>
+        <div class="info-item">
+          <span class="label">到期时间</span>
+          <span id="plan-expires" class="value">-</span>
+        </div>
+        <div class="info-item">
+          <span class="label">状态</span>
+          <span id="plan-status" class="value">-</span>
+        </div>
+        <div class="info-item">
+          <span class="label">自动续费</span>
+          <span id="plan-renew" class="value">-</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 额度用量 -->
+    <section class="card">
+      <h2>额度用量</h2>
+      <div id="quota-list"></div>
+    </section>
+
+    <!-- 每日明细 -->
+    <section class="card">
+      <div class="section-header">
+        <h2>每日明细</h2>
+        <div class="month-picker">
+          <button id="prev-month" onclick="changeMonth(-1)">&lt;</button>
+          <span id="month-label">-</span>
+          <button id="next-month" onclick="changeMonth(1)">&gt;</button>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table id="daily-table">
+          <thead>
+            <tr>
+              <th>日期</th>
+              <th>模型</th>
+              <th>请求数</th>
+              <th>总 Token</th>
+              <th>输入命中</th>
+              <th>输入未命中</th>
+              <th>输出</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <button id="refresh-btn" onclick="loadData()">刷新</button>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
