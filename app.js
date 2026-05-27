@@ -76,7 +76,7 @@ function renderUsage(data) {
       const planItem = usageItems.find(u => u.name === 'plan_total_token');
       const combinedLimit = (planItem ? planItem.limit : i.limit) + compItem.limit;
       const pct = combinedLimit > 0 ? i.used / combinedLimit : 0;
-      allItems.push({ ...i, scope: '本月', limit: combinedLimit, pct, limitLabel: `${formatToken(planItem ? planItem.limit : i.limit)} + ${formatToken(compItem.limit)}` });
+      allItems.push({ ...i, scope: '本月', limit: combinedLimit, pct });
     } else {
       allItems.push({ ...i, scope: '本月', pct: i.percent });
     }
@@ -88,13 +88,12 @@ function renderUsage(data) {
 
   for (const item of allItems) {
     const pct = item.pct;
-    const limitText = item.limitLabel ? item.limitLabel : formatToken(item.limit);
     const row = document.createElement('div');
     row.className = 'quota-row';
     row.innerHTML = `
       <div class="quota-header">
         <span class="name">${item.scope}</span>
-        <span class="detail">${formatToken(item.used)} / ${limitText} (${(pct * 100).toFixed(2)}%)</span>
+        <span class="detail">${formatToken(item.used)} / ${formatToken(item.limit)} (${(pct * 100).toFixed(2)}%)</span>
       </div>
       <div class="progress-bar">
         <div class="progress-fill ${fillClass(pct)}" style="width:${Math.max(pct * 100, 0.5)}%"></div>

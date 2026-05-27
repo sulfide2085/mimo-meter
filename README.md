@@ -31,7 +31,7 @@ mimo-meter/
 - `localhost` / `127.0.0.1` → 调用本地 `server.py`（端口 5000）
 - 其他域名 → 调用 `https://mimo-meter.sulfide2085.workers.dev`
 
-**注意：** 生产环境中 `dist/` 目录独立部署到 Cloudflare Pages，修改前端源文件后需要同步到 `dist/` 并重新部署 Pages。
+**注意：** 生产环境中前端文件直接部署到 Cloudflare Pages，修改前端源文件后需要重新部署 Pages。
 
 ## Cookie 说明
 
@@ -65,6 +65,8 @@ Cookie 字符串中的双引号会被自动去除，无需手动处理。
 | `plan_total_token` | 套餐总量 | 套餐内 Token 额度 |
 | `compensation_total_token` | 补偿积分 | 赠送的补偿额度（部分账号有） |
 | `month_total_token` | 本月 | 当月已使用量 |
+
+当账号存在补偿积分（`compensation_total_token` 的 `limit > 0`）时，「本月」行的额度上限会显示为套餐总量与补偿积分之和，百分比基于该总和重新计算。例如套餐总量 38000M、补偿积分 11350M，则「本月」显示为 `462.42M / 49350.65M (0.94%)`。
 
 ## 更新 Cookie（关键操作）
 
@@ -147,11 +149,8 @@ npx wrangler deploy
 前端部署到 Cloudflare Pages，项目名 `mimo-meter`，生产 URL：`https://mimo-meter.pages.dev/`
 
 ```bash
-# 1. 将源文件同步到 dist/
-cp index.html app.js style.css dist/
-
-# 2. 部署到 Pages 生产环境
-npx wrangler pages deploy dist/ --project-name=mimo-meter --branch=main
+# 部署到 Pages 生产环境
+npx wrangler pages deploy . --project-name=mimo-meter --branch=main
 ```
 
 ## API 接口
