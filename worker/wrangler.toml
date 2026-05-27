@@ -4,5 +4,10 @@ compatibility_date = "2024-01-01"
 workers_dev = true
 preview_urls = false
 
+[[kv_namespaces]]
+binding = "ACCOUNTS"
+id = "4e3f3322ffca495e990ed0164a0538cd"
+
 [vars]
 # MIMO_COOKIES should be set via: wrangler secret put MIMO_COOKIES
+# ADMIN_TOKEN should be set via: wrangler secret put ADMIN_TOKEN

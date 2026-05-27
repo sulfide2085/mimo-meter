@@ -1,6 +1,9 @@
 # Sensitive
 cookie.txt
 
+# Build output
+dist/
+
 # Python
 __pycache__/
 *.pyc

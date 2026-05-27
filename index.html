@@ -16,6 +16,11 @@
   <div id="loading" class="loading">加载中...</div>
   <div id="error" class="error" hidden></div>
 
+  <div id="account-bar" class="account-bar" hidden>
+    <label for="account-select">账号：</label>
+    <select id="account-select" onchange="onAccountChange()"></select>
+  </div>
+
   <div id="content" hidden>
     <!-- 套餐信息 -->
     <section class="card">
@@ -78,6 +83,54 @@
   <footer>
     <button id="refresh-btn" onclick="loadData()">刷新</button>
   </footer>
+
+  <!-- 账号管理 -->
+  <details id="admin-panel" class="admin-panel">
+    <summary>账号管理</summary>
+    <div class="admin-body">
+      <div class="admin-auth" id="admin-auth">
+        <div class="form-row">
+          <label>管理密码</label>
+          <input type="password" id="admin-token" placeholder="输入管理密码">
+          <button onclick="verifyToken()">验证</button>
+        </div>
+      </div>
+      <div id="admin-content" hidden>
+        <div class="cookie-form">
+          <div class="form-field">
+            <label>账号名称</label>
+            <input type="text" id="acct-name" placeholder="自定义名称（可选）">
+          </div>
+          <div class="form-field">
+            <label>api-platform_serviceToken</label>
+            <div class="input-group">
+              <input type="text" id="ck-apiToken" placeholder="API 认证令牌（必填）">
+              <button class="paste-btn" onclick="pasteToField('ck-apiToken')" title="从剪贴板粘贴">粘贴</button>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>userId</label>
+            <div class="input-group">
+              <input type="text" id="ck-userId" placeholder="用户 ID（必填）">
+              <button class="paste-btn" onclick="pasteToField('ck-userId')" title="从剪贴板粘贴">粘贴</button>
+            </div>
+          </div>
+          <div class="form-field">
+            <label>api-platform_ph</label>
+            <div class="input-group">
+              <input type="text" id="ck-ph" placeholder="每日明细必需（可选）">
+              <button class="paste-btn" onclick="pasteToField('ck-ph')" title="从剪贴板粘贴">粘贴</button>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button onclick="pasteCookies()">一键粘贴</button>
+            <button onclick="saveAccount()" class="primary">添加</button>
+          </div>
+        </div>
+        <div id="acct-list" class="acct-list"></div>
+      </div>
+    </div>
+  </details>
 </div>
 <script src="app.js"></script>
 </body>

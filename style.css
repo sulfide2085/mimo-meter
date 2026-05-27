@@ -47,6 +47,40 @@ header h1 {
   margin-top: 0.25rem;
 }
 
+/* Account Selector */
+.account-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.account-bar label {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+#account-select {
+  flex: 1;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#account-select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -232,3 +266,155 @@ footer {
 
 #refresh-btn:hover { background: var(--accent-light); }
 #refresh-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Admin Panel */
+.admin-panel {
+  margin-top: 2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-panel summary {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.admin-panel summary:hover { color: var(--text); }
+
+.admin-body {
+  padding: 0 1.5rem 1.5rem;
+}
+
+/* Cookie form */
+.cookie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form-field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-field label {
+  width: 200px;
+  flex-shrink: 0;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.form-field input {
+  flex: 1;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.input-group {
+  flex: 1;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.input-group input {
+  flex: 1;
+}
+
+.paste-btn {
+  background: var(--border);
+  color: var(--text-dim);
+  border: none;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.paste-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.form-actions button {
+  background: var(--border);
+  color: var(--text);
+  border: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.form-actions button:hover { background: var(--accent); }
+.form-actions button.primary { background: var(--accent); }
+.form-actions button.primary:hover { background: var(--accent-light); }
+
+.acct-list {
+  margin-top: 0.5rem;
+}
+
+.acct-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.acct-item .name { color: var(--text); }
+
+.acct-item .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.acct-item button {
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.acct-item button:hover {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.acct-item button:first-child:hover {
+  color: var(--accent-light);
+  border-color: var(--accent-light);
+}
